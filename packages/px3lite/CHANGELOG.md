@@ -5,12 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-**Note:** Version bump only for package @ip2.bin/db1lite
-
-
-
-
-
-# 1.0.0 (2019-07-23)
-
-**Note:** Version bump only for package @ip2.bin/db1lite
+**Note:** Version bump only for package @ip2.bin/px3lite
