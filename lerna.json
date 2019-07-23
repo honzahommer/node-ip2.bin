@@ -1,0 +1,24 @@
+{
+  "ci": false,
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.0.0",
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    },
+    "publish": {
+      "allowBranch": "master",
+      "conventionalCommits": true
+    }
+  },
+  "ignoreChanges": [
+    "**/test/**",
+    "**/CHANGELOG.md",
+    "**/package-lock.json",
+    "lerna.json",
+    "package.json",
+    "README.md"
+  ]
+}

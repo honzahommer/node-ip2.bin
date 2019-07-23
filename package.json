@@ -1,0 +1,26 @@
+{
+  "name": "ip2.bin",
+  "private": true,
+  "homepage": "https://github.com/honzahommer/node-ip2.bin#README",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honzahommer/node-ip2.bin.git"
+  },
+  "author": {
+    "name": "Honza Hommer",
+    "email": "honza@hommer.cz",
+    "url": "https://hommer.cz"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/honzahommer/node-ip2.bin/issues"
+  },
+  "scripts": {
+    "install": "lerna bootstrap",
+    "publish": "lerna publish && git commit -am \"Update version and changelog\" && git push origin master",
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "lerna": "^3.16.2"
+  }
+}
