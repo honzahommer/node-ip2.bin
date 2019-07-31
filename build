@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+if [ "$SKIP_BUILD" != "" ]; then
+  echo "build skipped"
+  exit 0
+fi
+
+if [ -z "$IP2_TOKEN" ]; then
+  echo "IP2_TOKEN is not set"
+  exit 1
+fi
+
+_DIRNAME="$(cd "$(dirname "$0")" && pwd)"
+DATABASES="$_DIRNAME/databases.csv"
+PACKAGES="$_DIRNAME/packages"
+
+if [ ! -f "$DATABASES" ]; then
+  echo "$DATABASES: no such file"
+  exit 1
+fi
+
+if [ ! -d "$PACKAGES" ]; then
+  echo "$PACKAGES: no such directory"
+  exit 1
+fi
+
+# shellcheck disable=SC2034
+while IFS=';' read -r code name desc; do
+  echo -n "$name... "
+
+  if [ -d "$PACKAGES/$name/lib/" ]; then
+    if [ "$BUILD_DATABASES" = "" ] || echo "$BUILD_DATABASES" | grep -Eiqw "$code|$name"; then
+      if wget -qO- "http://www.ip2location.com/download/?token=$IP2_TOKEN&file=$code" | tar --to-stdout -xf - \*.BIN > "$PACKAGES/$name/lib/$name.bin"; then
+        echo "updated"
+      else
+        echo "download failed"
+      fi
+    else
+      echo "skipped"
+    fi
+  else
+    echo "not exists"
+  fi
+done < "$DATABASES"

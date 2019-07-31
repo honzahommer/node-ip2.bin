@@ -16,7 +16,9 @@
     "url": "https://github.com/honzahommer/node-ip2.bin/issues"
   },
   "scripts": {
+    "build": "./build",
     "install": "lerna bootstrap",
+    "prepublish": "npm install && npm run build",
     "publish": "lerna publish && git commit -am \"Update version and changelog\" && git push origin master",
     "test": "lerna run test"
   },
