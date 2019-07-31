@@ -1,6 +1,6 @@
 {
   "name": "@ip2.bin/db1liteipv6",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "IPV6-COUNTRY Database",
   "homepage": "https://github.com/honzahommer/node-ip2.bin#README",
   "license": "MIT",
