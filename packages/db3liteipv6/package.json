@@ -6,7 +6,8 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/honzahommer/node-ip2.bin.git"
+    "url": "git+https://github.com/honzahommer/node-ip2.bin.git",
+    "directory": "packages/db3liteipv6"
   },
   "author": {
     "name": "Honza Hommer",
