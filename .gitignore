@@ -38,3 +38,4 @@ dist/
 .nyc_output/
 .cache
 .mocha-puppeteer
+*.bin
